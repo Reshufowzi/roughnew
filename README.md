@@ -47,7 +47,7 @@ eksctl create iamserviceaccount \
   --region us-east-1 \
   --namespace kube-system \
   --name aws-load-balancer-controller2 \
-  --attach-policy-arn arn:aws:iam::992382429239:policy/AWSLoadBalancerControllerIAMPolicy \
+  --attach-policy-arn arn:aws:iam::account-id:policy/AWSLoadBalancerControllerIAMPolicy \
   --approve
 ```
 ### 📦 Helm Setup
