@@ -1,3 +1,15 @@
+```bash
+aws eks --region us-east-1 update-kubeconfig --name mycluster
+```
+
+### Install kubectl for Linux
+
+```bash
+curl -Lo kubectl https://dl.k8s.io/release/$(curl -s -L https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl
+chmod +x ./kubectl
+sudo mv ./kubectl /usr/local/bin/kubectl
+```
+
 ### 🧱 eksctl Setup
 
 ```bash
