@@ -76,9 +76,9 @@ aws eks describe-cluster \
 ```bash
 helm install aws-load-balancer-controller eks/aws-load-balancer-controller \
   -n kube-system \
-  --set clusterName=LearnWithMithran \
-  --set region=ap-southeast-1 \
-  --set vpcId=vpc-020d3da5a9615c591 \
+  --set clusterName=mycluster \
+  --set region=us-east-1 \
+  --set vpcId=vpc-id \
   --set serviceAccount.create=false \
   --set serviceAccount.name=aws-load-balancer-controller2
 ```
@@ -119,8 +119,7 @@ spec:
     spec:
       containers:
       - name: frontend-app
-        image: hashicorp/http-echo
-        args: ["-text=this is frontend application"]
+        image: httpd
         ports:
         - containerPort: 8080
 ---
@@ -178,8 +177,7 @@ spec:
     spec:
       containers:
       - name: backend-app
-        image: hashicorp/http-echo
-        args: ["-text=this is backend application"]
+        image: nginx
         ports:
         - containerPort: 8081
 ---
